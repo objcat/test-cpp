@@ -14,8 +14,8 @@ int main() {
 	cout << "指针占用的内存大小" << sizeof(char *) << endl;
 	// 不同的是32位系统上指针占用4个字节 而指针指向的double类型变量占用8个字节
 	// 64位系统下double指针和变量都是8 自己可以打印试一下
-	double b = 1.2;
-	double *p2 = &b;
+	double a2 = 1.2;
+	double *p2 = &a2;
 	cout << "double指针" << sizeof(p2) << " double大小" << sizeof(*p2) << endl;
 
 	// 空指针 指向编号为0的空间 用途:初始化指针变量
@@ -28,16 +28,22 @@ int main() {
 	//cout << *p4 << endl;
 
 	// 常量指针 指针的指向可以改变 但是指针指向的值不能变
-	const int *p5 = &a;
-	int c = 2;
+	int a5 = 10;
+	const int *p5 = &a5;
 	// 这句话就是把变量a的值变为1
 	//*p5 = 20; // 报错
-	//虽然不能使用常量指针来改变值 但是可以通过修改原值来进行改变
-	a = 20;
-	cout << "a改变后 指针中的值" << *p5 << endl; //20
+	int a55 = 2;
 	// 这句话是把指向a的指针指向c 是可以成功执行的
-	p5 = &c;
+	p5 = &a55;
 	cout << "指针指向c后 指针中的值" << *p5 << endl;
+
+	// 指针常量 指针的指向不可以改变 但值可以改变
+	int a6 = 10;
+	int * const p6 = &a6;
+	// 不能改变指向
+	//p6 = &c; // 报错
+	*p6 = 1;
+	cout << "p6=" << *p6 << endl;
 
 	return 0;
 }
