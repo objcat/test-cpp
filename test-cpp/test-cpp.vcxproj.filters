@@ -18,5 +18,11 @@
     <ClCompile Include="指针.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="类.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="构造函数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
